@@ -1,0 +1,67 @@
+﻿    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>TasksHub Application</title>
+            <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+            <meta name="viewport" content="width=device-width" />
+            @Styles.Render("~/Content/css")
+            @Scripts.Render("~/bundles/modernizr")
+    	    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap.min.css")" />
+	        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap-theme.min.css")" />
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/datepicker.css")"  />
+	        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/app.css")">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
+	        <script type="text/javascript" src="@Url.Content("~/Scripts/app.js")"></script>
+            
+            <script type="text/javascript">
+                (function ($) {
+                    $(document).ready(function () {
+                        $(".date-picker").datepicker();
+                    });
+                })(jQuery);
+    </script>
+        </head>
+        <body>
+                <div  class="header-nav navbar navbar-inverse navbar-default" role="navigation">
+		    <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    		    <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>          
+		    </button>
+              <a class="navbar-brand" href="#"><img class="hdr-logo" src="@Url.Content("~/Content/Images/header-logo.jpg")" alt="Header Logo" title="Header Logo" /></a>
+            </div>
+            <div class="navbar-collapse collapse" style="height: 1px;">
+              <ul class="nav navbar-nav">
+                  @if(User.Identity.IsAuthenticated){
+                <li  class="active"><a href="@Url.Action("Index","Tasks")">Tasks</a></li>
+                  }
+                  @if (User.IsInRole("Admin"))
+                  {
+                <li><a href="@Url.Action("Index","Users")">Users</a></li>
+                  }
+              </ul>
+              <div class="nav navbar-nav navbar-right">
+              <!--  <li><a href="@Url.Action("Create")"><span class="glyphicon glyphicon-plus"></span>Create Task</a></li>-->
+               <!-- <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Logout</a></li>-->
+            @Html.Partial("_LoginPartial")
+              </div>
+            </div><!--/.nav-collapse -->
+          </div>
+	    </div>
+                @RenderSection("featured", required: false)
+                    @RenderBody()
+               
+
+                       
+            @Scripts.Render("~/bundles/jquery")
+            @RenderSection("scripts", required: false)
+        </body>
+    </html>

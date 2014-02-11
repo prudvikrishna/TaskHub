@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskHub.Web", "TaskHub.Web\TaskHub.Web.csproj", "{A6CF7656-35B2-4BF2-B9A2-6131F84477FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskHub.Web.Test", "TaskHub.Web.Test\TaskHub.Web.Test.csproj", "{90225F55-1625-4FB8-828A-919313151A4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6CF7656-35B2-4BF2-B9A2-6131F84477FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6CF7656-35B2-4BF2-B9A2-6131F84477FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6CF7656-35B2-4BF2-B9A2-6131F84477FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6CF7656-35B2-4BF2-B9A2-6131F84477FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90225F55-1625-4FB8-828A-919313151A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90225F55-1625-4FB8-828A-919313151A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90225F55-1625-4FB8-828A-919313151A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90225F55-1625-4FB8-828A-919313151A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,58 @@
+﻿@model TaskHub.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+@*<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+</hgroup>*@
+
+<section id="loginForm">
+@*<h2>Use a local account to log in.</h2>*@
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+      <div class="container">  
+<div class="form-group">
+    <h2 class="form-signin-heading">Use a local account to log in.</h2>
+              <div class="col-sm-8">@Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.UserName)</div></div>
+      <div class="form-group">
+    
+              <div class="col-sm-8">@Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Password)</div></div>
+
+      <div class="form-group">
+    
+               <div class="col-sm-8"><span> @Html.CheckBoxFor(m => m.RememberMe, new { @style="float:left"})</span>
+            <span>  @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox", @style ="margin:0"})</span></div></div>
+              <div class="form-group">
+    
+               <div class="col-sm-8">
+             <input type="submit" value="Log in" class="btn btn-primary"/>
+                   </div>
+        </div>
+<div class="form-group">
+    
+               <div class="col-sm-8">
+           @Html.ActionLink("Register", "Register") if you don't have an account.
+    
+      </div>
+    </div>
+  </div>
+  
+        
+}
+</section>
+
+@*<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
